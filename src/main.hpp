@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "./shared/common.hpp"
+#include "./shared/Common.hpp"
 
 #include "./shared/index.hpp"
 

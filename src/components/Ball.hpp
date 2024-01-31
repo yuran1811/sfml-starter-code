@@ -1,8 +1,9 @@
 #ifndef BALL_HPP
 #define BALL_HPP
 
-#include "../main.hpp"
+#include "../shared/Common.hpp"
 #include "../shared/index.hpp"
+#include "../utils/index.hpp"
 
 class Ball {
  private:

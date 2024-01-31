@@ -1,7 +1,7 @@
 #ifndef BUTTON_HPP
 #define BUTTON_HPP
 
-#include "../main.hpp"
+#include "../shared/Common.hpp"
 
 class Button {
  private:
