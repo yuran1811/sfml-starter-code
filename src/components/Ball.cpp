@@ -1,6 +1,7 @@
-#include "Ball.hpp"
+#include "./Ball.hpp"
 
 Ball::Ball() : size(50.f), coor(0, 0), velocity(0, 0), color(Color::Blue) {}
+
 Ball::Ball(float size, Vector2f coor, Vector2f velocity, Color color)
     : size(size), coor(coor), velocity(velocity), color(color) {
   this->shape = CircleShape(this->size);
@@ -12,7 +13,7 @@ Ball::~Ball() { delete this; }
 
 void Ball::draw() {}
 
-void Ball::update_pos() {
+void Ball::update_pos(ScreenSize SCREEN_SIZE) {
   if (is_out_range(this->coor.x, this->size, SCREEN_SIZE.width - this->size))
     this->velocity.x *= -1;
   if (is_out_range(this->coor.y, this->size, SCREEN_SIZE.height - this->size))
@@ -23,10 +24,8 @@ void Ball::update_pos() {
   this->shape.setPosition(this->coor);
 }
 
-void Ball::update() {
-  this->update_pos();
-}
+void Ball::update(ScreenSize SCREEN_SIZE) { this->update_pos(SCREEN_SIZE); }
 
 void Ball::debug() {
-  cout << "Position: " << this->coor.x << "," << this->coor.y << endl;
+  // cout << "Position: " << this->coor.x << "," << this->coor.y << endl;
 }

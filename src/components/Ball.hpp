@@ -1,9 +1,9 @@
-#pragma once
-
-#include "../App.hpp"
-
 #ifndef BALL_HPP
 #define BALL_HPP
+
+#include "../main.hpp"
+#include "../shared/index.hpp"
+
 class Ball {
  private:
   float size;
@@ -20,9 +20,10 @@ class Ball {
 
   void draw();
 
-  void update_pos();
-  void update();
+  void update_pos(ScreenSize SCREEN_SIZE);
+  void update(ScreenSize SCREEN_SIZE);
 
   void debug();
 };
+
 #endif

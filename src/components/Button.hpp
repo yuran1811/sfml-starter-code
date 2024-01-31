@@ -1,9 +1,8 @@
-#pragma once
-
-#include "../App.hpp"
-
 #ifndef BUTTON_HPP
 #define BUTTON_HPP
+
+#include "../main.hpp"
+
 class Button {
  private:
   bool isPressed;
@@ -12,4 +11,5 @@ class Button {
   Button();
   ~Button();
 };
+
 #endif
