@@ -6,14 +6,14 @@
 
 ```
 .
-├── bin				# Folder contains binary files (exe, dll,...)
+├── bin			# Folder contains binary files (exe, dll,...)
 │  └── *.dll		# Dynamic link library files (SFML,...)
 │
 ├── docs
 ├── include
 ├── libs
 │
-├── public			# Public files (fonts, icons, images,...)
+├── public		# Public files (fonts, icons, images,...)
 │  ├── fonts
 │  ├── icons
 │  └── images
@@ -49,6 +49,6 @@
 - Duplicate the file `mingw32-make.exe` and rename it to `make.exe`
 - Open up the terminal and type `make run`
 
-### References
+### Documentations
 
 - [**Refs**](./docs/refs.md)
