@@ -1,13 +1,21 @@
 {
+  "env": {
+    "myIncludePath": [
+      "${workspaceFolder}/include/**",
+      "${workspaceFolder}/src/**"
+    ],
+  },
   "configurations": [
     {
-      "name": "Win32",
-      "includePath": ["${default}", "${workspaceFolder}/**"],
-      "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
-      "windowsSdkVersion": "10.0.22621.0",
-      "cStandard": "c23",
-      "compilerPath": "D:/Program/mingw64/bin/g++.exe",
-      "cppStandard": "c++23"
+      "name": "cpp",
+      "includePath": ["${myIncludePath}"],
+      "configurationProvider": "ms-vscode.cmake-tools",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerPath": "D:\\Program\\mingw64\\bin\\g++.exe",
+      "cppStandard": "c++23",
+      "browse": {
+        "path": ["${myIncludePath}", "${workspaceFolder}/**"]
+      }
     }
   ],
   "version": 4

@@ -1,19 +1,5 @@
 {
-  "files.associations": {
-    ".env*": "dotenv",
-    "*.cjs": "javascript",
-    "*.mjs": "javascript",
-    "*.css": "postcss",
-    "*.postcss": "postcss",
-    "*.ejs": "html",
-    "*.nss": "csharp",
-    "*.shader": "glsl",
-    "*.tcc": "cpp",
-    "deque": "cpp",
-    "string": "cpp",
-    "unordered_map": "cpp",
-    "vector": "cpp",
-    "system_error": "cpp"
-  },
-  "workbench.colorTheme": "Default Dark Modern"
+	"C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
+		"*"
+	]
 }
