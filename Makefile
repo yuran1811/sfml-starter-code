@@ -1,32 +1,34 @@
-CC := g++
-CFLAGS :=
+CXX       		:= g++
+CXX_FLAGS 		:= -std=c++17 -ggdb
 
-SFML_INCLUDE := -Isrc/include
-SFML_LINKER := -Lsrc/lib
+# SFML Libs: 	[-lsfml-system -lsfml-window -lsfml-network -lsfml-graphics -lsfml-audio -lsfml-main]
+SFML_LIBS 		:= -lsfml-system -lsfml-window -lsfml-graphics
 
-# SFML libraries: [-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network]
-SFML_LIBS := -lsfml-graphics -lsfml-window -lsfml-system
+BIN       		:= bin
+INCLUDE   		:= include
+LIBS      		:= libs
+SRC       		:= src
 
-SRCS := $(wildcard *.cpp)
-OBJS := $(SRCS:.cpp=.o)
+SRCS 			:= $(wildcard $(SRC)/utils/*.cpp $(SRC)/shared/*.cpp $(SRC)/components/*.cpp $(SRC)/*.cpp)
+OBJS 			:= $(SRCS:.cpp=.o)
 
 # Executable name
-TARGET := main
+TARGET 			:= main
 
 # Default target
-all: $(TARGET)
+all: $(BIN)/$(TARGET)
 
 # Rule to build the executable
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(SFML_LINKER) $(SFML_LIBS)
+$(BIN)/$(TARGET): $(OBJS)
+	$(CXX) $(CXX_FLAGS) $(OBJS) -o ./$(BIN)/$(TARGET) -L$(LIBS) -I$(INCLUDE) $(SFML_LIBS)
 
 # Rule to build object files
 %.o: %.cpp
-	$(CC) $(CFLAGS) $(SFML_INCLUDE) -c $< -o $@
+	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -c $< -o $@
 
 # Clean rule
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) ./$(BIN)/$(TARGET)
 
-run:
-	make && ./main && make clean
+run: clean all
+	./$(BIN)/$(TARGET) && make clean
