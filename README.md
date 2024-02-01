@@ -10,20 +10,28 @@
 │  └── *.dll		# Dynamic link library files (SFML,...)
 │
 ├── docs
+│  └── refs.md
+│
 ├── include
+│  └── SFML		# SFML header files
+│
 ├── libs
 │
-├── public		# Public files (fonts, icons, images,...)
+├── public
 │  ├── fonts
 │  ├── icons
-│  └── images
+│  ├── images
+│  ├── logs
+│  ├── sounds
+│  └── textures
 │
-├── resources		# External libs (SFML,...)
+├── resources
+│  └── SFML-2.6.1
 │
 ├── src
 │  ├── components	# Shared components,...
 │  ├── core
-│  ├── interface
+│  ├── interface	# Shared uis,...
 │  ├── shared		# Shared constants,...
 │  ├── utils		# Shared functions
 │  ├── main.cpp
