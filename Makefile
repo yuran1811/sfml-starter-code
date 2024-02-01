@@ -9,7 +9,7 @@ INCLUDE   		:= include
 LIBS      		:= libs
 SRC       		:= src
 
-SRCS 			:= $(wildcard $(SRC)/utils/*.cpp $(SRC)/shared/*.cpp $(SRC)/components/*.cpp $(SRC)/*.cpp)
+SRCS 			:= $(wildcard $(SRC)/utils/*.cpp $(SRC)/shared/*.cpp $(SRC)/components/*.cpp $(SRC)/core/*.cpp $(SRC)/interface/*.cpp $(SRC)/*.cpp)
 OBJS 			:= $(SRCS:.cpp=.o)
 
 # Executable name
@@ -31,4 +31,4 @@ clean:
 	rm -f $(OBJS) ./$(BIN)/$(TARGET)
 
 run: clean all
-	./$(BIN)/$(TARGET) && make clean
+	./$(BIN)/$(TARGET)
