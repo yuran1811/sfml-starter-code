@@ -1,12 +1,13 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 
-struct Point {
-  int x;
-  int y;
-
-  Point() : x(0), y(0) {}
-  Point(int x, int y) : x(x), y(y) {}
+class Point : public Vector2f {
+ private:
+ public:
+  Point() : Vector2f(){};
+  Point(float x) : Vector2f(x, x){};
+  Point(float x, float y) : Vector2f(x, y){};
+  ~Point(){};
 };
 
 #endif

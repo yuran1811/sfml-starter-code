@@ -1,13 +1,20 @@
 #ifndef SCREENSIZE_HPP
 #define SCREENSIZE_HPP
 
-struct ScreenSize {
-  float width;
-  float height;
+#include "./Size.hpp"
 
-  ScreenSize() : width(480), height(480){};
-  ScreenSize(int width) : width(width), height(width){};
-  ScreenSize(int width, int height) : width(width), height(height){};
+class ScreenSize : public Size {
+ private:
+ public:
+  ScreenSize() : Size(){};
+  ScreenSize(float width) : Size(width){};
+  ScreenSize(float width, float height) : Size(width, height){};
+
+  ScreenSize& operator=(const ScreenSize& other) {
+    width = other.width;
+    height = other.height;
+    return *this;
+  }
 };
 
 #endif

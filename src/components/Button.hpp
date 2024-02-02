@@ -3,13 +3,21 @@
 
 #include "../shared/Common.hpp"
 
+enum class ButtonState { IDLE, HOVER, PRESSED };
+
 class Button {
  private:
-  bool isPressed;
+  Text text;
+  Image icon;
+  ButtonState state;
+  RectangleShape shape;
 
  public:
   Button();
   ~Button();
+
+  void update();
+  void render();
 };
 
 #endif
