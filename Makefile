@@ -1,5 +1,5 @@
 CXX       		:= g++
-CXX_FLAGS 		:= -std=c++17 -ggdb
+CXX_FLAGS 		:= -std=c++17 # -ggdb
 
 # SFML Libs: 	[-lsfml-system -lsfml-window -lsfml-network -lsfml-graphics -lsfml-audio -lsfml-main]
 SFML_LIBS 		:= -lsfml-system -lsfml-window -lsfml-graphics
@@ -26,9 +26,8 @@ $(BIN)/$(TARGET): $(OBJS)
 %.o: %.cpp
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -c $< -o $@
 
-# Clean rule
 clean:
 	rm -f $(OBJS) ./$(BIN)/$(TARGET)
 
-run: clean all
+run: all
 	./$(BIN)/$(TARGET)
